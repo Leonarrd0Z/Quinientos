@@ -1,41 +1,54 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
-	<FileVersion major="1" minor="6" />
-	<Project>
-		<Option title="Escalera" />
-		<Option pch_mode="2" />
-		<Option compiler="gcc" />
-		<Build>
-			<Target title="Debug">
-				<Option output="bin/Debug/Escalera" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
-				<Option type="1" />
-				<Option compiler="gcc" />
-				<Compiler>
-					<Add option="-g" />
-				</Compiler>
-			</Target>
-			<Target title="Release">
-				<Option output="bin/Release/Escalera" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
-				<Option type="1" />
-				<Option compiler="gcc" />
-				<Compiler>
-					<Add option="-O2" />
-				</Compiler>
-				<Linker>
-					<Add option="-s" />
-				</Linker>
-			</Target>
-		</Build>
-		<Compiler>
-			<Add option="-Wall" />
-			<Add option="-fexceptions" />
-		</Compiler>
-		<Unit filename="Funciones.h" />
-		<Unit filename="main.cpp" />
-		<Extensions>
-			<lib_finder disable_auto="1" />
-		</Extensions>
-	</Project>
-</CodeBlocks_project_file>
+#include <iostream>
+#include <string>
+#include <ctime>
+#include "rlutil.h"
+#include "Funciones.h"
+
+using namespace std;
+
+/// Variables para almacenar los nombres y puntajes m�s altos
+string Puntaje_Max_PlayerName = "";
+int Puntaje_Max = 0;
+
+int main() {
+    srand(time(0));
+    rlutil::hidecursor();
+
+    ///vector<int> valores(6); // Vector para almacenar los valores de los dados
+    vector<int> valores = {1, 3, 2, 4, 5, 6}; // Valores de los dados para la escalera
+
+    // Mostrar los valores de los dados
+    for (int num = 1; num <= 6; num++) {
+        dibujardado(num * 10, 5, valores[num - 1]);
+        }
+
+   /// Generar valores aleatorios para los dados
+   /* for (int i = 0; i < 6; i++) {
+        valores[i] = rand() % 6 + 1;
+    }
+
+    /// Mostrar los valores de los dados
+    for(int num = 1; num <=6; num++){
+      dibujardado(num*10, 5 + rand() % 4, valores[num - 1]);
+    }*/
+
+    /// Calcular el puntaje y mostrar los resultados
+    int puntaje = calcularPuntaje(valores);
+    rlutil::setBackgroundColor(0);
+    rlutil::setColor(15);
+    rlutil::locate(1,17);
+    cout << "Puntaje final de la ronda: " << puntaje << endl;
+
+    rlutil::setBackgroundColor(0);
+    rlutil::setColor(15);
+    rlutil::locate(1,20);
+    cout << "Presione una tecla para salir" << endl;
+    rlutil::anykey();
+    rlutil::setBackgroundColor(0);
+    rlutil::setColor(15);
+    rlutil::locate(1,25);
+
+    /// Resto del c�digo
+
+    return 0;
+}
