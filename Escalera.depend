@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1685231040 source:c:\users\leonarrdo_z\desktop\1°c-tup-2023\labo 1\tp integrador\escalera\main.cpp
+	<iostream>
+	<string>
+	<ctime>
+	"rlutil.h"
+	"Funciones.h"
+
+1666474814 c:\users\leonarrdo_z\desktop\1°c-tup-2023\labo 1\tp integrador\escalera\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1685230972 c:\users\leonarrdo_z\desktop\1°c-tup-2023\labo 1\tp integrador\escalera\funciones.h
+	<iostream>
+	"rlutil.h"
+	<vector>
+
